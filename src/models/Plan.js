@@ -17,6 +17,6 @@ const planSchema = {
 
 const PlanSchema = new Schema(planSchema);
 
-const Plan = mongoose.model("Plans", PlanSchema);
+const Plan = mongoose.model("Plan", PlanSchema);
 
 module.exports = Plan;

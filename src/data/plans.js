@@ -8,3 +8,5 @@ const plans = [
     locations: [],
   },
 ];
+
+module.exports = plans;

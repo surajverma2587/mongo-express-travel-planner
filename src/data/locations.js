@@ -16,3 +16,5 @@ const locations = [
     city: "Sofia",
   },
 ];
+
+module.exports = locations;

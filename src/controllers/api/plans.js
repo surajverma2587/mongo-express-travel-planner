@@ -1,12 +1,13 @@
 const { Plan } = require("../../models");
 
 const getPlans = async (req, res) => {
-  const plans = await Plan.find({});
+  const plans = await Plan.find({}).populate("locations");
   res.json(plans);
 };
 
-const getPlan = (req, res) => {
-  res.json({});
+const getPlan = async (req, res) => {
+  const plan = await Plan.findById(req.params.id).populate("locations");
+  res.json(plan);
 };
 
 const createPlan = (req, res) => {

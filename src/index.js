@@ -1,17 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const { PORT, DB_URL, MONGOOSE_OPTIONS } = require("./config");
 const routes = require("./routes");
 
-const PORT = process.env.PORT || 4000;
-
-const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-
-const DB_NAME = "travelDb";
-
-const DB_URL = process.env.MONGODB_URI || `mongodb://localhost/${DB_NAME}`;
-
-mongoose.connect(DB_URL, dbOptions);
+mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const app = express();
 
