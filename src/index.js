@@ -1,13 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
-const { PORT, DB_URL, MONGOOSE_OPTIONS } = require("./config");
 const routes = require("./routes");
 
 mongoose.connect(DB_URL, MONGOOSE_OPTIONS);
 
 const app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
